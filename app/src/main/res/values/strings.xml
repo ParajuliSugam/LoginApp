@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Login App</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="login_page">Login Page</string>
+    <string name="sign_in">Sign In</string>
+    <string name="register">Register</string>
+    <string name="back"><![CDATA[<< Back]]></string>
+    <string name="reg_username">Username</string>
+    <string name="reg_password">Password</string>
+    <string name="reg_phone_number">Phone Number</string>
+    <string name="reg_address">Address</string>
+    <string name="register_button">Register</string>
+    <string name="radio_male">Male</string>
+    <string name="radio_female">Female</string>
+    <string name="radio_gender">Gender :</string>
+    <string name="username_view">Username :</string>
+    <string name="district_choose">Choose a District</string>
+    <string-array name="sp_dropdown_list">
+        <item>Choose an Opiton</item>
+        <item>Kathmandu</item>
+        <item>Bhaktapur</item>
+        <item>Lalitpur</item>
+        <item>Dhading</item>
+        <item>Jhapa</item>
+        <item>Dhanusha</item>
+    </string-array>
+</resources>

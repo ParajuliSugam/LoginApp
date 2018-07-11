@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SecondActivity">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center">
+    <TextView
+        android:id="@+id/tv_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dimens_3x"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:text="UserName: "/>
+
+    <TextView
+        android:id="@+id/tv_UserNameSecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dimens_3x"
+        android:gravity="center"
+        android:layout_weight="1"/>
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center">
+
+
+    <TextView
+        android:id="@+id/tv_Pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dimens_3x"
+        android:text="Password: "
+        android:layout_weight="1"
+        android:gravity="center"/>
+    <TextView
+        android:id="@+id/tv_PasswordSecond"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="@dimen/dimens_3x"
+        android:gravity="center"/>
+
+</LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_BackButton"
+        android:text="@string/back"
+        android:layout_gravity="center"
+        android:paddingTop="@dimen/dimens_3x"/>
+</LinearLayout>

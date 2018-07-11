@@ -13,7 +13,7 @@ import java.util.Objects;
 
 public class RegisteredActivity extends AppCompatActivity {
 
-    private TextView UserNameView, PasswordView, Addressview, PhoneView, GenderView, spDistrict;
+    private TextView userNameView, passwordView, addressview, phoneView, genderView, spDistrict;
     private String Gender;
 
     @Override
@@ -21,22 +21,22 @@ public class RegisteredActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registered);
 
-        UserNameView = (TextView)findViewById(R.id.tv_ViewUsername);
-        PasswordView = (TextView)findViewById(R.id.tv_ViewPassword);
-        PhoneView = (TextView)findViewById(R.id.tv_ViewPhone);
-        Addressview = (TextView)findViewById(R.id.tv_ViewAddress);
-        GenderView = (TextView)findViewById(R.id.tv_ViewGender);
+        userNameView = (TextView)findViewById(R.id.tv_view_username);
+        passwordView = (TextView)findViewById(R.id.tv_view_password);
+        phoneView = (TextView)findViewById(R.id.tv_view_phone);
+        addressview = (TextView)findViewById(R.id.tv_view_address);
+        genderView = (TextView)findViewById(R.id.tv_view_gender);
         spDistrict = (TextView)findViewById(R.id.sp_dropdown_view);
 //        Bundle extras = getIntent().getExtras();
 //        if (extras != null) {
 //            Gender = extras.getString("radioChosen");
 //
 //        }
-        UserNameView.setText(Objects.requireNonNull(getIntent().getExtras()).getString("RegisterUsernameFinal"));
-        PasswordView.setText(getIntent().getExtras().getString("RegisterPasswordFinal"));
-        PhoneView.setText(getIntent().getExtras().getString("RegisterPhoneFinal"));
-        Addressview.setText(getIntent().getExtras().getString("RegisterAddressFinal"));
-        GenderView.setText(getIntent().getExtras().getString("RegisterRadioFinal"));
+        userNameView.setText(Objects.requireNonNull(getIntent().getExtras()).getString("RegisterUsernameFinal"));
+        passwordView.setText(getIntent().getExtras().getString("RegisterPasswordFinal"));
+        phoneView.setText(getIntent().getExtras().getString("RegisterPhoneFinal"));
+        addressview.setText(getIntent().getExtras().getString("RegisterAddressFinal"));
+        genderView.setText(getIntent().getExtras().getString("RegisterRadioFinal"));
         spDistrict.setText(getIntent().getExtras().getString("spDistrict"));
     }
 }

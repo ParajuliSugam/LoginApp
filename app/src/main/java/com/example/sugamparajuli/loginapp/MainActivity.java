@@ -3,10 +3,14 @@ package com.example.sugamparajuli.loginapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.sugamparajuli.loginapp.utils.ShowToast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button Login;
     private TextView Info;
     private int Counter = 5;
+    public String StrUsername, StrPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,20 +31,26 @@ public class MainActivity extends AppCompatActivity {
         Password = (EditText)findViewById(R.id.et_password);
         Login = (Button)findViewById(R.id.bt_Login);
         Register = (Button)findViewById(R.id.bt_Register);
-        Info = (TextView)findViewById(R.id.tv_Message);
-
-        Info.setText("Number of attemps remaining: 5");
 
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                validate(Username.getText().toString(),Password.getText().toString());
+                StrUsername = Username.getText().toString().trim();
+                StrPassword = Password.getText().toString().trim();
+                if (TextUtils.isEmpty(StrUsername)) {
+                    ShowToast.showToast(MainActivity.this, "Username cannot be Empty.", true);
+                }
+                    else if(TextUtils.isEmpty(StrPassword)) {
+                        ShowToast.showToast(MainActivity.this, "Password cannot be Empty.", true);
+                }else{
+                    validate(Username.getText().toString(), Password.getText().toString());
+                }
             }
         });
         Register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent register = new Intent(MainActivity.this,RegisterActivity.class);
+                Intent register = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(register);
             }
         });
@@ -54,11 +65,12 @@ public class MainActivity extends AppCompatActivity {
         }
         else{
             Counter--;
-
-            Info.setText("Number of attemps remaining: "+String.valueOf(Counter));
-
-            if (Counter==0){
+            if (Counter!=0) {
+                ShowToast.showToast(MainActivity.this, "Wrong Password. " + Counter + " attemps left.", true);
+            }
+            else if (Counter==0){
                 Login.setEnabled(false);
+                ShowToast.showToast(MainActivity.this,"Maximum wrong Attemps. Login Button Disabled.",true);
             }
         }
     }

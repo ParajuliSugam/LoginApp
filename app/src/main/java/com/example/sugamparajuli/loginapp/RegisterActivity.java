@@ -3,6 +3,7 @@ package com.example.sugamparajuli.loginapp;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,13 +15,15 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sugamparajuli.loginapp.utils.ShowToast;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private Button RegisterButton;
     private EditText RegisterUsername, RegisterPassword, RegisterAddress, RegisterPhone;
     private RadioGroup rgGender;
     private RadioButton rgGenderType;
-    public String str, selected;
+    public String str, selected, ChkUsername, ChkPassword,ChkAddress, ChkPhone;
     public boolean checked;
     private Spinner spDistrict;
     ArrayAdapter<CharSequence> adapter;
@@ -62,6 +65,24 @@ public class RegisterActivity extends AppCompatActivity {
         RegisterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ChkUsername = RegisterUsername.getText().toString().trim();
+                ChkPassword = RegisterPassword.getText().toString().trim();
+                ChkAddress = RegisterAddress.getText().toString().trim();
+                ChkPhone = RegisterPhone.getText().toString().trim();
+                if (TextUtils.isEmpty(ChkUsername)){
+                    ShowToast.showToast(RegisterActivity.this,"Username cannot be empty.",true);
+                }else if(TextUtils.isEmpty(ChkPassword)){
+                    ShowToast.showToast(RegisterActivity.this,"Password cannot be empty.",true);
+                }else if(TextUtils.isEmpty(ChkAddress)){
+                    ShowToast.showToast(RegisterActivity.this,"Address cannot be empty.",true);
+                }else if(TextUtils.isEmpty(ChkPhone)){
+                    ShowToast.showToast(RegisterActivity.this,"Phone Number cannot be empty.",true);
+                }else{
+                    getFormValue();
+                }
+            }
+
+            private void getFormValue() {
                 Intent registerIntent = new Intent(RegisterActivity.this, RegisteredActivity.class);
                 registerIntent.putExtra("RegisterUsernameFinal", RegisterUsername.getText().toString());
                 registerIntent.putExtra("RegisterPasswordFinal", RegisterPassword.getText().toString());

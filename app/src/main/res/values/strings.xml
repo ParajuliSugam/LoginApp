@@ -15,12 +15,14 @@
     <string name="radio_female">Female</string>
     <string name="radio_gender">Gender :</string>
     <string name="username_view">Username :</string>
-    <string name="district_choose">Choose a District</string>
+    <string name="district_choose">Birth Place</string>
     <string name="password_registered">Password :</string>
     <string name="phone_number_registered">Phone Number :</string>
     <string name="address_registered">Address :</string>
     <string name="gender_registered">Gender :</string>
     <string name="birth_place_registered">Birth Place :</string>
+    <string name="welcome_registered">Welcome :</string>
+    <string name="basic_info">Basic Info</string>
     <string-array name="sp_dropdown_list">
         <item>Choose an Opiton</item>
         <item>Kathmandu</item>

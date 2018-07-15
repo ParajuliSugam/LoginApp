@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent register = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(register);
+                finish();
             }
         });
     }
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             i.putExtra("UserNamePass",Username.getText().toString());
             i.putExtra("PasswordPass",Password.getText().toString());
             startActivity(i);
+            finish();
         }
         else{
             Counter--;

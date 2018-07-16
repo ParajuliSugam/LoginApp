@@ -1,10 +1,7 @@
 package com.example.sugamparajuli.loginapp;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.net.Uri;
-import android.service.chooser.ChooserTarget;
-import android.service.chooser.ChooserTargetService;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +9,7 @@ import android.widget.TextView;
 
 public class RegisteredActivity extends AppCompatActivity {
 
-    private String tvEmail;
+    private String tvEmail, tvWebsite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +24,9 @@ public class RegisteredActivity extends AppCompatActivity {
         TextView tvEmailView = findViewById(R.id.tv_view_email);
         TextView tvGenderView = findViewById(R.id.tv_view_gender);
         TextView spDistrict = findViewById(R.id.sp_dropdown_view);
-        TextView tvWebsite = findViewById(R.id.tv_view_website);
+        TextView tvWebsiteView = findViewById(R.id.tv_view_website);
         tvEmail = tvEmailView.getText().toString().trim();
+        tvWebsite = tvWebsiteView.getText().toString().trim();
 //        Bundle extras = getIntent().getExtras();
 //        if (extras != null) {
 //            Gender = extras.getString("radioChosen");
@@ -41,7 +39,7 @@ public class RegisteredActivity extends AppCompatActivity {
         tvAddressView.setText(getIntent().getExtras().getString("RegisterAddressFinal"));
         tvGenderView.setText(getIntent().getExtras().getString("RegisterRadioFinal"));
         spDistrict.setText(getIntent().getExtras().getString("spDistrict"));
-        tvWebsite.setText(getIntent().getExtras().getString("RegisterWebsiteFinal"));
+        tvWebsiteView.setText(getIntent().getExtras().getString("RegisterWebsiteFinal"));
         tvEmailView.setText(getIntent().getExtras().getString("RegisterEmailFinal"));
     }
     public void ImplicitIntent(View view){
@@ -65,6 +63,14 @@ public class RegisteredActivity extends AppCompatActivity {
             chooser = Intent.createChooser(intent,"Send Email");
             startActivity(chooser);
 
+        }else if(view.getId()==R.id.tv_view_website){
+            intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(tvWebsite));
+            chooser = Intent.createChooser(intent,"Open Website Using..");
+            if (intent.resolveActivity(getPackageManager()) !=null) {
+                startActivity(chooser);
+            }else{
+                
+            }
         }
     }
-}

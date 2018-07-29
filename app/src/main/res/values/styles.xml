@@ -1,11 +1,11 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorPrimary">@color/colorPrimaryDark</item>
     </style>
     <style name="linearLayoutDesign">
         <item name="android:layout_marginBottom">16dp</item>
@@ -15,11 +15,12 @@
     <item name="android:background">@android:color/darker_gray</item>
     <item name="android:paddingStart">@dimen/dimens_2x</item>
     <item name="android:paddingEnd">@dimen/dimens_2x</item>
-    <item name="android:textSize">20sp</item>
+    <item name="android:textSize">25sp</item>
 </style>
     <style name="linearLayoutDesign2">
         <item name="android:layout_gravity">center</item>
-        <item name="android:layout_margin">2dp</item>
+        <!--<item name="android:layout_margin">2dp</item>-->
+        <item name="android:layout_marginTop">10dp</item>
         <item name="android:paddingLeft">@dimen/dimens_4x</item>
         <item name="android:background">@android:color/holo_blue_light</item>
         <item name="android:paddingRight">@dimen/dimens_4x</item>
@@ -27,7 +28,7 @@
     <style name="textViewData">
         <item name="android:layout_marginRight">@dimen/dimens_2x</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">20sp</item>
     </style>
     <style name="textViewHead2" parent="linearLayoutDesign">
     <item name="android:background">@android:color/darker_gray</item>

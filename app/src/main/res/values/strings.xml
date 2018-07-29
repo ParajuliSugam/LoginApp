@@ -27,6 +27,7 @@
     <string name="website_view">Website</string>
     <string name="register_email">E-Mail Address</string>
     <string name="tv_email_view">E-Mail</string>
+    <string name="error_message">Select an option</string>
     <string-array name="sp_dropdown_list">
         <item>Choose an Opiton</item>
         <item>Kathmandu</item>

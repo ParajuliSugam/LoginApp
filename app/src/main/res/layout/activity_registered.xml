@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/background_image"
     android:paddingTop="@dimen/dimens_2x"
     tools:context=".RegisteredActivity">
 
@@ -11,6 +12,7 @@
         style="@style/linearLayoutDesign"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <TextView
@@ -52,6 +54,7 @@
         style="@style/linearLayoutDesign2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal">
 
         <TextView
@@ -70,8 +73,10 @@
     </LinearLayout>
 
     <TextView
-        style="@style/textViewHead2"
+        style="@style/textViewHead"
         android:layout_width="match_parent"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
         android:text="@string/basic_info" />
 

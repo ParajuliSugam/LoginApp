@@ -1,6 +1,9 @@
 package com.example.sugamparajuli.loginapp;
 
 import android.content.Intent;
+import android.support.design.widget.Snackbar;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,9 +17,9 @@ import com.example.sugamparajuli.loginapp.utils.ShowToast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText Username;
+    private TextInputEditText Username;
     private Button Register;
-    private EditText Password;
+    private TextInputEditText Password;
     private Button Login;
     private TextView Info;
     private int Counter = 5;
@@ -27,8 +30,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Username =(EditText)findViewById(R.id.et_username);
-        Password = (EditText)findViewById(R.id.et_password);
+        Username = findViewById(R.id.et_username);
+        Password = findViewById(R.id.et_password);
         Login = (Button)findViewById(R.id.bt_Login);
         Register = (Button)findViewById(R.id.bt_Register);
 
@@ -70,9 +73,10 @@ public class MainActivity extends AppCompatActivity {
             if (Counter!=0) {
                 ShowToast.showToast(MainActivity.this, "Wrong Password. " + Counter + " attemps left.", true);
             }
-            else if (Counter==0){
-                Login.setEnabled(false);
-                ShowToast.showToast(MainActivity.this,"Maximum wrong Attemps. Login Button Disabled.",true);
+            else if (Counter<=0){
+                Toast.makeText(this,"Forgot Password? Register Here",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
+                startActivity(intent);
             }
         }
     }
